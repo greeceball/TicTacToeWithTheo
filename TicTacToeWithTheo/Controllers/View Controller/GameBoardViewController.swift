@@ -33,6 +33,7 @@ class GameBoardViewController: UIViewController {
     //MARK: - Properties
     
     var currentPlayer: Player = GameController.shared.player1
+    var gameActive = true
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -43,12 +44,37 @@ class GameBoardViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func buttonTapped(_ sender: UIButton) {
+        guard gameActive else { return } // do not accept button taps if the game is over
+        
+        currentPlayer == GameController.shared.player1 ? sender.setImage(#imageLiteral(resourceName: "Recoil"), for: .normal) : sender.setImage(#imageLiteral(resourceName: "Tree"), for: .normal)
+        
         let value: Int = sender.tag
         if GameController.shared.playerMoved(player: currentPlayer, move: value) {
+            
+            
+            // current player has won the game
+            gameInfo.text = "\(currentPlayer.name) won!"
+            
+            // game over!
+            gameActive = false
+        } else {
+            updateCurrentPlayer()
+            gameInfo.text = "\(currentPlayer.name)'s turn"
         }
+        
+    }
+    
+    
+    
+    @IBAction func clearButtonTapped(_ sender: Any) {
+        
     }
     
     //MARK: - HelperFunc's
+    func updateCurrentPlayer() {
+        currentPlayer =  GameController.shared.player1Turn ? GameController.shared.player1 : GameController.shared.player2
+    }
+    
     func setUpUI() {
         
         //MARK: - GameBoardStackView
@@ -66,5 +92,6 @@ class GameBoardViewController: UIViewController {
         //MARK: - ClearButton
         
     }
+    
 }
 

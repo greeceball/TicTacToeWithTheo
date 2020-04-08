@@ -60,6 +60,7 @@ class GameController {
         } else {
             // change players
             togglePlayer()
+            
             return false
         }
     }
