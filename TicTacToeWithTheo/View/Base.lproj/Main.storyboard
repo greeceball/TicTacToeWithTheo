@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game Board View Controller-->
         <scene sceneID="2AP-en-4p0">
             <objects>
-                <viewController id="I4S-Ug-3w4" sceneMemberID="viewController">
+                <viewController id="I4S-Ug-3w4" customClass="GameBoardViewController" customModule="TicTacToeWithTheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wMJ-LO-e7s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,15 +26,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="NOB-yj-S40">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="119.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fb4-D7-UUg">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fb4-D7-UUg">
                                                 <rect key="frame" x="0.0" y="0.0" width="119.5" height="119.5"/>
                                                 <state key="normal" title="(1)"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dh7-uK-TK1">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dh7-uK-TK1">
                                                 <rect key="frame" x="122.5" y="0.0" width="119" height="119.5"/>
                                                 <state key="normal" title="(2)"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiN-pn-IBL">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiN-pn-IBL">
                                                 <rect key="frame" x="244.5" y="0.0" width="119.5" height="119.5"/>
                                                 <state key="normal" title="(3)"/>
                                             </button>
@@ -43,15 +43,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="i0r-7n-KD1">
                                         <rect key="frame" x="0.0" y="122.5" width="364" height="119"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84K-VX-xD8">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84K-VX-xD8">
                                                 <rect key="frame" x="0.0" y="0.0" width="119.5" height="119"/>
                                                 <state key="normal" title="(4)"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyu-V8-Jus">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyu-V8-Jus">
                                                 <rect key="frame" x="122.5" y="0.0" width="119" height="119"/>
                                                 <state key="normal" title="(5)"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U23-Fn-0jq">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U23-Fn-0jq">
                                                 <rect key="frame" x="244.5" y="0.0" width="119.5" height="119"/>
                                                 <state key="normal" title="(6)"/>
                                             </button>
@@ -60,15 +60,18 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="xW9-yc-lhW">
                                         <rect key="frame" x="0.0" y="244.5" width="364" height="119.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMl-q3-lW4">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMl-q3-lW4">
                                                 <rect key="frame" x="0.0" y="0.0" width="119.5" height="119.5"/>
                                                 <state key="normal" title="(7)"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8X-a4-j3P">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8X-a4-j3P">
                                                 <rect key="frame" x="122.5" y="0.0" width="119" height="119.5"/>
                                                 <state key="normal" title="(8)"/>
+                                                <connections>
+                                                    <action selector="buttonTapped:" destination="I4S-Ug-3w4" eventType="touchUpInside" id="qF2-ad-sfQ"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBu-mQ-mL1">
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBu-mQ-mL1">
                                                 <rect key="frame" x="244.5" y="0.0" width="119.5" height="119.5"/>
                                                 <state key="normal" title="(9)"/>
                                             </button>
@@ -87,6 +90,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YN4-Qn-v8m"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonEight" destination="q8X-a4-j3P" id="Fqq-62-XjD"/>
+                        <outlet property="buttonFive" destination="Kyu-V8-Jus" id="USP-Ka-4EV"/>
+                        <outlet property="buttonFour" destination="84K-VX-xD8" id="SOg-M6-16P"/>
+                        <outlet property="buttonNine" destination="uBu-mQ-mL1" id="jX4-46-0cH"/>
+                        <outlet property="buttonOne" destination="fb4-D7-UUg" id="rjj-wE-Flf"/>
+                        <outlet property="buttonSeven" destination="VMl-q3-lW4" id="ngJ-JY-g16"/>
+                        <outlet property="buttonSix" destination="U23-Fn-0jq" id="GeE-zN-U9Q"/>
+                        <outlet property="buttonThree" destination="eiN-pn-IBL" id="6N5-Zx-iUP"/>
+                        <outlet property="buttonTwo" destination="dh7-uK-TK1" id="gn0-lm-ZKZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lvq-L5-280" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
