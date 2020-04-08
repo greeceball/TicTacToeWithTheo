@@ -21,6 +21,7 @@ class GameBoardViewController: UIViewController {
     @IBOutlet weak var buttonEight: UIButton!
     @IBOutlet weak var buttonNine: UIButton!
     
+    @IBOutlet weak var gameInfo: UILabel!
     
     
     //MARK: - Properties
