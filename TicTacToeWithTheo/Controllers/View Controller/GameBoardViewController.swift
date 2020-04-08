@@ -9,7 +9,7 @@
 import UIKit
 
 class GameBoardViewController: UIViewController {
-
+    
     //MARK: - Outlets
     @IBOutlet weak var buttonOne: UIButton!
     @IBOutlet weak var buttonTwo: UIButton!
@@ -25,20 +25,21 @@ class GameBoardViewController: UIViewController {
     
     //MARK: - Properties
     
+    var currentPlayer: Player = GameController.shared.player1
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     //MARK: - Actions
-    @IBAction func buttonTapped(_ sender: Any) {
-        
-        
-        
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        let value: Int = sender.tag
+        if GameController.shared.playerMoved(player: currentPlayer, move: value) {
     }
     
     
     //MARK: - HelperFunc's
-
+    
 }
