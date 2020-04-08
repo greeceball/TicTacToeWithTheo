@@ -1,24 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I4S-Ug-3w4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Game Board View Controller-->
+        <scene sceneID="2AP-en-4p0">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="I4S-Ug-3w4" customClass="GameBoardViewController" customModule="TicTacToeWithTheo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wMJ-LO-e7s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBY-K9-Qe1">
+                                <rect key="frame" x="353" y="44" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Crq-5S-Ra6">
+                                <rect key="frame" x="25" y="266" width="364" height="364"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="NOB-yj-S40">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="119.5"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fb4-D7-UUg">
+                                                <rect key="frame" x="0.0" y="0.0" width="119.5" height="119.5"/>
+                                                <state key="normal" title="(1)"/>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dh7-uK-TK1">
+                                                <rect key="frame" x="122.5" y="0.0" width="119" height="119.5"/>
+                                                <state key="normal" title="(2)"/>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiN-pn-IBL">
+                                                <rect key="frame" x="244.5" y="0.0" width="119.5" height="119.5"/>
+                                                <state key="normal" title="(3)"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="i0r-7n-KD1">
+                                        <rect key="frame" x="0.0" y="122.5" width="364" height="119"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84K-VX-xD8">
+                                                <rect key="frame" x="0.0" y="0.0" width="119.5" height="119"/>
+                                                <state key="normal" title="(4)"/>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyu-V8-Jus">
+                                                <rect key="frame" x="122.5" y="0.0" width="119" height="119"/>
+                                                <state key="normal" title="(5)"/>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U23-Fn-0jq">
+                                                <rect key="frame" x="244.5" y="0.0" width="119.5" height="119"/>
+                                                <state key="normal" title="(6)"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="xW9-yc-lhW">
+                                        <rect key="frame" x="0.0" y="244.5" width="364" height="119.5"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMl-q3-lW4">
+                                                <rect key="frame" x="0.0" y="0.0" width="119.5" height="119.5"/>
+                                                <state key="normal" title="(7)"/>
+                                            </button>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8X-a4-j3P">
+                                                <rect key="frame" x="122.5" y="0.0" width="119" height="119.5"/>
+                                                <state key="normal" title="(8)"/>
+                                                <connections>
+                                                    <action selector="buttonTapped:" destination="I4S-Ug-3w4" eventType="touchUpInside" id="qF2-ad-sfQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBu-mQ-mL1">
+                                                <rect key="frame" x="244.5" y="0.0" width="119.5" height="119.5"/>
+                                                <state key="normal" title="(9)"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Crq-5S-Ra6" secondAttribute="height" multiplier="1:1" id="9OU-AJ-8ak"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Crq-5S-Ra6" firstAttribute="leading" secondItem="YN4-Qn-v8m" secondAttribute="leading" constant="25" id="MHI-tW-9qt"/>
+                            <constraint firstItem="YN4-Qn-v8m" firstAttribute="trailing" secondItem="Crq-5S-Ra6" secondAttribute="trailing" constant="25" id="yhw-jl-0qo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YN4-Qn-v8m"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonEight" destination="q8X-a4-j3P" id="Fqq-62-XjD"/>
+                        <outlet property="buttonFive" destination="Kyu-V8-Jus" id="USP-Ka-4EV"/>
+                        <outlet property="buttonFour" destination="84K-VX-xD8" id="SOg-M6-16P"/>
+                        <outlet property="buttonNine" destination="uBu-mQ-mL1" id="jX4-46-0cH"/>
+                        <outlet property="buttonOne" destination="fb4-D7-UUg" id="rjj-wE-Flf"/>
+                        <outlet property="buttonSeven" destination="VMl-q3-lW4" id="ngJ-JY-g16"/>
+                        <outlet property="buttonSix" destination="U23-Fn-0jq" id="GeE-zN-U9Q"/>
+                        <outlet property="buttonThree" destination="eiN-pn-IBL" id="6N5-Zx-iUP"/>
+                        <outlet property="buttonTwo" destination="dh7-uK-TK1" id="gn0-lm-ZKZ"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lvq-L5-280" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="256.52173913043481" y="-148.66071428571428"/>
         </scene>
     </scenes>
 </document>
