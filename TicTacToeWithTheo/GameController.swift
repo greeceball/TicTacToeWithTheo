@@ -44,14 +44,38 @@ class GameController {
     
     var player1Turn: Bool = true
     
+    private let winningCombos: [Set<Int>] = [
+        [1,2,3],
+        [4,5,6],
+        [7,8,9],
+        [1,4,7],
+        [2,5,8],
+        [3,6,9],
+        [1,5,9],
+        [3,5,7]
+    ]
     
-    // Methods
+    
+    // Public Methods
     
     func playerMoved(player: Player, move: Int){
         
     }
     
     
+    // Helper Functions
+    
+    private func append(move: Int, toPlayer: Player) {
+        
+    }
+    
+    private func togglePlayer() {
+        
+    }
+    
+    private func detectWin() {
+        
+    }
     
     
     
