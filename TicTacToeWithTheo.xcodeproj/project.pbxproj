@@ -14,6 +14,7 @@
 		347EF1E9243E756800A97C55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347EF1E7243E756800A97C55 /* LaunchScreen.storyboard */; };
 		347EF1F6243E7AF600A97C55 /* GameBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347EF1F5243E7AF600A97C55 /* GameBoardViewController.swift */; };
 		AC215DB0243E799500933C9B /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC215DAF243E799500933C9B /* GameController.swift */; };
+		AC215DB3243E861000933C9B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC215DB2243E861000933C9B /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		347EF1EA243E756800A97C55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		347EF1F5243E7AF600A97C55 /* GameBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewController.swift; sourceTree = "<group>"; };
 		AC215DAF243E799500933C9B /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameController.swift; path = TicTacToeWithTheo/GameController.swift; sourceTree = SOURCE_ROOT; };
+		AC215DB2243E861000933C9B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				347EF1F4243E75D400A97C55 /* View */,
 				347EF1F1243E759700A97C55 /* Controllers */,
+				AC215DB1243E857100933C9B /* Model */,
 				347EF1F0243E758800A97C55 /* Resources */,
 			);
 			path = TicTacToeWithTheo;
@@ -108,6 +111,14 @@
 				347EF1E2243E756700A97C55 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AC215DB1243E857100933C9B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC215DB2243E861000933C9B /* Player.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC215DB3243E861000933C9B /* Player.swift in Sources */,
 				347EF1DD243E756700A97C55 /* AppDelegate.swift in Sources */,
 				AC215DB0243E799500933C9B /* GameController.swift in Sources */,
 				347EF1DF243E756700A97C55 /* SceneDelegate.swift in Sources */,
@@ -330,7 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJLVU28L56;
-				INFOPLIST_FILE = TicTacToeWithTheo/Info.plist;
+				INFOPLIST_FILE = TicTacToeWithTheo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,7 +360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJLVU28L56;
-				INFOPLIST_FILE = TicTacToeWithTheo/Info.plist;
+				INFOPLIST_FILE = TicTacToeWithTheo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
