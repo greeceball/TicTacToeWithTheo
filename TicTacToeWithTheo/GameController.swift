@@ -8,17 +8,6 @@
 
 import Foundation
 
-struct Player {
-    let name: String
-    var moves: Set<Int> = []
-} // end Player
-
-enum SquareState {
-    case empty
-    case X
-    case O
-}
-
 class GameController {
     // MARK: - Shared Instance
     
@@ -27,8 +16,8 @@ class GameController {
     
     // MARK: - Properties
     
-    let player1 = Player(name: "Player 1")
-    let player2 = Player(name: "Player 2")
+    var player1 = Player(name: "Player 1", token: .X)
+    var player2 = Player(name: "Player 2", token: .O)
     
     var currentBoardState: [Int : SquareState] = [
         1 : .empty,
@@ -58,26 +47,43 @@ class GameController {
     
     // Public Methods
     
-    func playerMoved(player: Player, move: Int){
+    func playerMoved(player: Player, move: Int) -> Bool {
+        // update Game Board
+        currentBoardState[move] = player.token
         
+        // insert move to player moves
+        player.moves.insert(move)
+        
+        // did this player win?
+        if didWin(player) {
+            return true
+        } else {
+            // change players
+            togglePlayer()
+            return false
+        }
     }
     
     
     // Helper Functions
     
-    private func append(move: Int, toPlayer: Player) {
-        
-    }
-    
     private func togglePlayer() {
-        
+        player1Turn = !player1Turn
     }
     
-    private func detectWin() {
+    private func didWin(_ player: Player) -> Bool {
+        let playerMoves = player.moves
+        guard playerMoves.count >= 3 else { return false }
         
+        for combo in winningCombos {
+            if playerMoves.intersection(combo).count == 3 {
+                print("Winner! winning move: \(playerMoves.intersection(combo))")
+                return true
+            }
+        }
+        print("no winning moves")
+        return false
     }
-    
-    
     
     
 } // end class
