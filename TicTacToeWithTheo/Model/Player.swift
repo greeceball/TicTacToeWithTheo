@@ -25,3 +25,9 @@ enum SquareState {
     case X
     case O
 }
+
+extension Player: Equatable {
+    static func == (lhs: Player, rhs: Player) -> Bool {
+        return lhs.name == rhs.name
+    }
+}
