@@ -11,6 +11,7 @@ import UIKit
 class GameBoardViewController: UIViewController {
     
     //MARK: - Outlets
+    //MARK: - Button Outlets
     @IBOutlet weak var buttonOne: UIButton!
     @IBOutlet weak var buttonTwo: UIButton!
     @IBOutlet weak var buttonThree: UIButton!
@@ -21,8 +22,13 @@ class GameBoardViewController: UIViewController {
     @IBOutlet weak var buttonEight: UIButton!
     @IBOutlet weak var buttonNine: UIButton!
     
+    //MARK: - Label Outlets
+    @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var gameInfo: UILabel!
     
+    //MARK: - StackView Outlets
+    @IBOutlet weak var gameBoardStackView: UIStackView!
+    @IBOutlet weak var playerLegendStackView: UIStackView!
     
     //MARK: - Properties
     
@@ -31,6 +37,7 @@ class GameBoardViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.black
         
     }
     
@@ -38,9 +45,26 @@ class GameBoardViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: UIButton) {
         let value: Int = sender.tag
         if GameController.shared.playerMoved(player: currentPlayer, move: value) {
+        }
     }
     
-    
     //MARK: - HelperFunc's
-    
+    func setUpUI() {
+        
+        //MARK: - GameBoardStackView
+        gameBoardStackView.axis = .horizontal
+        gameBoardStackView.alignment = .center
+        gameBoardStackView.distribution = .fillEqually
+        
+        //MARK: - PlayerLegendStackView
+        playerLegendStackView.axis = .vertical
+        playerLegendStackView.alignment = .center
+        
+        
+        //MARK: - GameInfoLabel
+        
+        //MARK: - ClearButton
+        
+    }
 }
+
