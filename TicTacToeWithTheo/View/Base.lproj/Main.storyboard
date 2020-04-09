@@ -85,6 +85,10 @@
                                     <constraint firstAttribute="width" secondItem="Crq-5S-Ra6" secondAttribute="height" multiplier="1:1" id="9OU-AJ-8ak"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1IY-vO-XCr">
+                                <rect key="frame" x="-13" y="106" width="75" height="20.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bXy-QS-BhN">
                                 <rect key="frame" x="107" y="96" width="200" height="110"/>
                                 <subviews>
@@ -130,7 +134,7 @@
                                     <constraint firstAttribute="height" constant="110" id="udN-bh-daK"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(Game Info)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xud-vf-LQy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(Game Info)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xud-vf-LQy">
                                 <rect key="frame" x="71" y="733" width="272" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -155,10 +159,7 @@
                         <outlet property="buttonSix" destination="U23-Fn-0jq" id="GeE-zN-U9Q"/>
                         <outlet property="buttonThree" destination="eiN-pn-IBL" id="6N5-Zx-iUP"/>
                         <outlet property="buttonTwo" destination="dh7-uK-TK1" id="gn0-lm-ZKZ"/>
-                        <outlet property="clearButton" destination="sBY-K9-Qe1" id="wMj-fg-7EZ"/>
-                        <outlet property="gameBoardStackView" destination="Crq-5S-Ra6" id="5yy-yG-7E3"/>
                         <outlet property="gameInfo" destination="Xud-vf-LQy" id="1bD-oy-Ywm"/>
-                        <outlet property="playerLegendStackView" destination="WZQ-79-mMe" id="kJ3-1y-0uW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lvq-L5-280" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
