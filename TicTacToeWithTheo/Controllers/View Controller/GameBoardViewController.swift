@@ -22,6 +22,10 @@ class GameBoardViewController: UIViewController {
     @IBOutlet weak var buttonEight: UIButton!
     @IBOutlet weak var buttonNine: UIButton!
     
+    //MARK: - TextLabels in stack view
+    @IBOutlet weak var player1Label: UILabel!
+    @IBOutlet weak var player2Label: UILabel!
+    
     //MARK: - Label Outlets
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var gameInfo: UILabel!
@@ -29,6 +33,11 @@ class GameBoardViewController: UIViewController {
     //MARK: - StackView Outlets
     @IBOutlet weak var gameBoardStackView: UIStackView!
     @IBOutlet weak var playerLegendStackView: UIStackView!
+    @IBOutlet weak var viewStackView: UIStackView!
+    
+    //MARK: - UIImage Outlets
+    @IBOutlet weak var recoilImage: UIImageView!
+    @IBOutlet weak var treeImage: UIImageView!
     
     //MARK: - Properties
     
@@ -40,6 +49,7 @@ class GameBoardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
+        setUpUI()
     }
     
     
@@ -75,20 +85,33 @@ class GameBoardViewController: UIViewController {
 
     func setUpUI() {
         
+        //MARK: - ViewStackView
+        viewStackView.translatesAutoresizingMaskIntoConstraints = false
+        viewStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
+        viewStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15).isActive = true
+        viewStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 15).isActive = true
+        viewStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 15).isActive = true
+        viewStackView.distribution = .fillEqually
+
         //MARK: - GameBoardStackView
-        gameBoardStackView.axis = .horizontal
-        gameBoardStackView.alignment = .center
-        gameBoardStackView.distribution = .fillEqually
+
         
         //MARK: - PlayerLegendStackView
-        playerLegendStackView.axis = .vertical
-        playerLegendStackView.alignment = .center
+        player1Label.textColor = .green
+        player2Label.textColor = .green
+        
+        recoilImage.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        recoilImage.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        treeImage.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        treeImage.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        
         
         
         //MARK: - GameInfoLabel
-        
+        gameInfo.textColor = .green
         //MARK: - ClearButton
-        
+        clearButton.setTitleColor(.green, for: .normal)
     }
     
 }
