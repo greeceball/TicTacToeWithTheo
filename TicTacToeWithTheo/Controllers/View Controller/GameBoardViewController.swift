@@ -49,7 +49,9 @@ class GameBoardViewController: UIViewController {
     
     var currentPlayer: Player = GameController.shared.player1
     var gameActive = true
-    let gameboardBackground = UIImageView(image: #imageLiteral(resourceName: "TicTakToeBoard"))
+    
+   
+    
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -85,17 +87,16 @@ class GameBoardViewController: UIViewController {
         }
     }
     
+    
     @IBAction func clearButtonTapped(_ sender: Any) {
         
     }
-    
     
     //MARK: - HelperFunc's
     func updateCurrentPlayer() {
         currentPlayer =  GameController.shared.player1Turn ? GameController.shared.player1 : GameController.shared.player2
         gameInfo.text = "\(currentPlayer.name)'s turn"
     }
-    
     
     func setUpUI() {
         
