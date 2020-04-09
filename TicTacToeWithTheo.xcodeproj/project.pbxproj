@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3476C2F2243F89DB0060588D /* Herculanum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3476C2F1243F89DB0060588D /* Herculanum.ttf */; };
 		347EF1DD243E756700A97C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347EF1DC243E756700A97C55 /* AppDelegate.swift */; };
 		347EF1DF243E756700A97C55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347EF1DE243E756700A97C55 /* SceneDelegate.swift */; };
 		347EF1E4243E756700A97C55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347EF1E2243E756700A97C55 /* Main.storyboard */; };
@@ -18,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3476C2F0243F83CC0060588D /* Herculanum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Herculanum.ttf; path = ../../../Calculator/Font/Herculanum.ttf; sourceTree = "<group>"; };
+		3476C2F1243F89DB0060588D /* Herculanum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Herculanum.ttf; sourceTree = "<group>"; };
 		347EF1D9243E756700A97C55 /* TicTacToeWithTheo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToeWithTheo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		347EF1DC243E756700A97C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		347EF1DE243E756700A97C55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +46,7 @@
 		3476C2EC243F80C20060588D /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				3476C2F0243F83CC0060588D /* Herculanum.ttf */,
+				3476C2F1243F89DB0060588D /* Herculanum.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -191,6 +192,7 @@
 			files = (
 				347EF1E9243E756800A97C55 /* LaunchScreen.storyboard in Resources */,
 				347EF1E6243E756800A97C55 /* Assets.xcassets in Resources */,
+				3476C2F2243F89DB0060588D /* Herculanum.ttf in Resources */,
 				347EF1E4243E756700A97C55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
