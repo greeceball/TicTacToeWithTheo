@@ -29,11 +29,13 @@ class GameBoardViewController: UIViewController {
     var currentPlayer: Player = GameController.shared.player1
     var gameActive = true
     
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
     }
+    
     
     //MARK: - Actions
     @IBAction func buttonTapped(_ sender: UIButton) {
@@ -50,12 +52,11 @@ class GameBoardViewController: UIViewController {
             gameActive = false
         } else {
             updateCurrentPlayer()
-            gameInfo.text = "\(currentPlayer.name)'s turn"
         }
     }
     
     @IBAction func clearButtonTapped(_ sender: Any) {
-        
+        GameController.shared.resetBoard()
     }
     
     
@@ -66,6 +67,8 @@ class GameBoardViewController: UIViewController {
     
     func updateCurrentPlayer() {
         currentPlayer =  GameController.shared.player1Turn ? GameController.shared.player1 : GameController.shared.player2
+        gameInfo.text = "\(currentPlayer.name)'s turn"
     }
+    
     
 }
