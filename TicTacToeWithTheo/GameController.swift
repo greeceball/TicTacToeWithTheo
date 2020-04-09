@@ -14,12 +14,8 @@ class GameController {
     static let shared = GameController()
     
     
-    // MARK: - Properties
-    
-    var player1 = Player(name: "Player 1", token: .X)
-    var player2 = Player(name: "Player 2", token: .O)
-    
-    var currentBoardState: [Int : SquareState] = [
+    // MARK: - Private Properties
+    private var cleanBoard: [Int : SquareState] = [
         1 : .empty,
         2 : .empty,
         3 : .empty,
@@ -30,6 +26,14 @@ class GameController {
         8 : .empty,
         9 : .empty
     ]
+    
+    
+    // MARK: - Properties
+    
+    var player1 = Player(name: "Player 1", token: .X)
+    var player2 = Player(name: "Player 2", token: .O)
+    
+    var currentBoardState: [Int : SquareState]
     
     var player1Turn: Bool = true
     
@@ -43,6 +47,12 @@ class GameController {
         [1,5,9],
         [3,5,7]
     ]
+    
+    // Initializer
+    
+    init() {
+        self.currentBoardState = cleanBoard
+    }
     
     
     // Public Methods
@@ -65,6 +75,11 @@ class GameController {
         }
     }
     
+    func resetBoard() {
+        self.currentBoardState = cleanBoard
+        player1Turn = true
+    }
+    
     
     // Helper Functions
     
@@ -82,7 +97,7 @@ class GameController {
                 return true
             }
         }
-        print("no winning moves")
+        print("\(player.name): no winning moves yet")
         return false
     }
     

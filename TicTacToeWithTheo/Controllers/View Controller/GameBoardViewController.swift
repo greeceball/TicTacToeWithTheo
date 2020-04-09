@@ -44,12 +44,14 @@ class GameBoardViewController: UIViewController {
     var currentPlayer: Player = GameController.shared.player1
     var gameActive = true
     
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
         setUpUI()
     }
+    
     
     //MARK: - Actions
     @IBAction func buttonTapped(_ sender: UIButton) {
@@ -59,8 +61,6 @@ class GameBoardViewController: UIViewController {
         
         let value: Int = sender.tag
         if GameController.shared.playerMoved(player: currentPlayer, move: value) {
-            
-            
             // current player has won the game
             gameInfo.text = "\(currentPlayer.name) won!"
             
@@ -68,22 +68,21 @@ class GameBoardViewController: UIViewController {
             gameActive = false
         } else {
             updateCurrentPlayer()
-            gameInfo.text = "\(currentPlayer.name)'s turn"
         }
-        
     }
-    
-    
     
     @IBAction func clearButtonTapped(_ sender: Any) {
         
     }
     
+    
     //MARK: - HelperFunc's
     func updateCurrentPlayer() {
         currentPlayer =  GameController.shared.player1Turn ? GameController.shared.player1 : GameController.shared.player2
+        gameInfo.text = "\(currentPlayer.name)'s turn"
     }
     
+
     func setUpUI() {
         
         //MARK: - ViewStackView
