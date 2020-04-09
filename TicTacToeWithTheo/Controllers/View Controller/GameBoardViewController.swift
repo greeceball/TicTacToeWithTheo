@@ -50,14 +50,14 @@ class GameBoardViewController: UIViewController {
     var currentPlayer: Player = GameController.shared.player1
     var gameActive = true
     
-   
+    
     
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
-        setUpUI()
+//        setUpUI()
         updateCurrentPlayer()
         updateBoard()
     }
@@ -65,8 +65,18 @@ class GameBoardViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func buttonTapped(_ sender: UIButton) {
-        guard gameActive else { return } // do not accept button taps if the game is over
+        buttonOne.imageEdgeInsets = UIEdgeInsets(top: 20, left: 10, bottom: 0, right: -10)
+        buttonTwo.imageEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        buttonThree.imageEdgeInsets = UIEdgeInsets(top: 20, left: -10, bottom: 0, right: 10)
+        buttonFour.imageEdgeInsets = UIEdgeInsets(top: 20, left: -10, bottom: 15, right: 10)
+        buttonFive.imageEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 15, right: 0)
+        buttonSix.imageEdgeInsets = UIEdgeInsets(top: 20, left: 10, bottom: 15, right: -10)
+        buttonSeven.imageEdgeInsets = UIEdgeInsets(top: 5, left: -10, bottom: 15, right: 10)
+        buttonEight.imageEdgeInsets = UIEdgeInsets(top: 5, left: 0, bottom: 15, right: 0)
+        buttonNine.imageEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 15, right: -10)
         
+        guard gameActive else { return } // do not accept button taps if the game is over
+        print("Button \(sender.tag) was pressed")
         currentPlayer == GameController.shared.player1 ? sender.setImage(#imageLiteral(resourceName: "Recoil"), for: .normal) : sender.setImage(#imageLiteral(resourceName: "Tree"), for: .normal)
         
         updateBoard()
