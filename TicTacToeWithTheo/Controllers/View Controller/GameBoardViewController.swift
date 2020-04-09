@@ -99,7 +99,10 @@ class GameBoardViewController: UIViewController {
     
     
     @IBAction func clearButtonTapped(_ sender: Any) {
-        
+        GameController.shared.resetBoard()
+        updateBoard()
+        updateCurrentPlayer()
+        gameActive = true
     }
     
     //MARK: - HelperFunc's
