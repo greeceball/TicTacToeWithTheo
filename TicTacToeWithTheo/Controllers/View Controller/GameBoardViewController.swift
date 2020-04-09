@@ -63,15 +63,15 @@ class GameBoardViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func buttonTapped(_ sender: UIButton) {
-        buttonOne.imageEdgeInsets = UIEdgeInsets(top: 20, left: 10, bottom: 0, right: -10)
-        buttonTwo.imageEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
-        buttonThree.imageEdgeInsets = UIEdgeInsets(top: 20, left: -10, bottom: 0, right: 10)
-        buttonFour.imageEdgeInsets = UIEdgeInsets(top: 20, left: -10, bottom: 15, right: 10)
-        buttonFive.imageEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 15, right: 0)
-        buttonSix.imageEdgeInsets = UIEdgeInsets(top: 20, left: 10, bottom: 15, right: -10)
-        buttonSeven.imageEdgeInsets = UIEdgeInsets(top: 5, left: -10, bottom: 15, right: 10)
-        buttonEight.imageEdgeInsets = UIEdgeInsets(top: 5, left: 0, bottom: 15, right: 0)
-        buttonNine.imageEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 15, right: -10)
+        buttonOne.imageEdgeInsets = UIEdgeInsets(top: 30, left: -10, bottom: -10, right: 10)
+        buttonTwo.imageEdgeInsets = UIEdgeInsets(top: 30, left: 0, bottom: -10, right: 0)
+        buttonThree.imageEdgeInsets = UIEdgeInsets(top: 30, left: 10, bottom: -10, right: -10)
+        buttonFour.imageEdgeInsets = UIEdgeInsets(top: 15, left: -10, bottom: 8.5, right: 10)
+        buttonFive.imageEdgeInsets = UIEdgeInsets(top: 15, left: 0, bottom: 8.5, right: 0)
+        buttonSix.imageEdgeInsets = UIEdgeInsets(top: 15, left: 10, bottom: 8.5, right: -10)
+        buttonSeven.imageEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 25, right: 10)
+        buttonEight.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 25, right: 0)
+        buttonNine.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 25, right: -10)
         
         guard gameActive else { return } // do not accept button taps if the game is over
         print("Button \(sender.tag) was pressed")
