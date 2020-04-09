@@ -13,16 +13,13 @@ Language: Swift 5
 
 Our main goal for this project was getting experience with git merge. We divided our tasks, practiced simultaneous development, and submitted pull requests to the the `develop` branch.
 
-![](/README/draftOnPaper-CH.jpg)
-
-![](/README/draftOnPaper-TV.jpg)
-
-
 Our secondary goal was getting experience with programmatic constraints. The app uses a hybrid of both Storyboard and traditional programmatic constraints.
 
 
 ## Planning
 
-We started off on paper.
+We started off on paper and identified several problems when thinking about how the app would detect a win.
 
-We identified several problems 
+![Colby's Handwritten Notes](README/draftOnPaper-CH.jpg)
+
+![Theo's Handwritten Notes](README/draftOnPaper-TV.jpg)
