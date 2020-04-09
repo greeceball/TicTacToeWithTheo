@@ -49,7 +49,7 @@ class GameBoardViewController: UIViewController {
     
     var currentPlayer: Player = GameController.shared.player1
     var gameActive = true
-    
+    let gameboardBackground = UIImageView(image: #imageLiteral(resourceName: "TicTakToeBoard"))
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -99,37 +99,50 @@ class GameBoardViewController: UIViewController {
         viewStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15).isActive = true
         viewStackView.distribution = .fillProportionally
 
+        //MARK: - GameBoardBackground
+        //gameboardBackground.translatesAutoresizingMaskIntoConstraints = false
+        //gameboardBackground.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        //gameboardBackground.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        
+        
         //MARK: - GameBoardStackView
+        
+        gameBoardStackView.translatesAutoresizingMaskIntoConstraints = false
         gameBoardStackView.topAnchor.constraint(equalTo: viewStackView.topAnchor, constant: 175).isActive = true
         gameBoardStackView.leadingAnchor.constraint(equalTo: viewStackView.leadingAnchor, constant: 20).isActive = true
         gameBoardStackView.trailingAnchor.constraint(equalTo: viewStackView.trailingAnchor, constant: -60).isActive = true
         gameBoardStackView.bottomAnchor.constraint(equalTo: viewStackView.bottomAnchor, constant: -200).isActive = true
+        //gameBoardStackView.addArrangedSubview(gameboardBackground)
         
         //gameBoardStackView.distribution = .fillEqually
         
 
         //MARK: - Subviews of gameBoardStackView
         //MARK: - StackView containing 1,2,3
-        
-        stack123StackView.topAnchor.constraint(equalTo: gameBoardStackView.topAnchor, constant: -50).isActive = true
+        stack123StackView.translatesAutoresizingMaskIntoConstraints = false
+        stack123StackView.topAnchor.constraint(equalTo: gameBoardStackView.topAnchor, constant: -35).isActive = true
         stack123StackView.leadingAnchor.constraint(equalTo: gameBoardStackView.leadingAnchor, constant: 0).isActive = true
         stack123StackView.trailingAnchor.constraint(equalTo: gameBoardStackView.trailingAnchor, constant: 0).isActive = true
         stack123StackView.bottomAnchor.constraint(equalTo: gameBoardStackView.bottomAnchor, constant: 0).isActive = true
 
         //MARK: - StackView containing 4,5,6
+        stack456StackView.translatesAutoresizingMaskIntoConstraints = false
         stack456StackView.topAnchor.constraint(equalTo: gameBoardStackView.topAnchor, constant: 50).isActive = true
         stack456StackView.leadingAnchor.constraint(equalTo: gameBoardStackView.leadingAnchor, constant: 0).isActive = true
         stack456StackView.trailingAnchor.constraint(equalTo: gameBoardStackView.trailingAnchor, constant: 0).isActive = true
         stack456StackView.bottomAnchor.constraint(equalTo: gameBoardStackView.bottomAnchor, constant: 0).isActive = true
 
         //MARK: - StackView containing 7,8,9
-        stack789StackView.topAnchor.constraint(equalTo: gameBoardStackView.topAnchor, constant: 150).isActive = true
+        stack789StackView.translatesAutoresizingMaskIntoConstraints = false
+        stack789StackView.topAnchor.constraint(equalTo: gameBoardStackView.topAnchor, constant: 135).isActive = true
         stack789StackView.leadingAnchor.constraint(equalTo: gameBoardStackView.leadingAnchor, constant: 0).isActive = true
         stack789StackView.trailingAnchor.constraint(equalTo: gameBoardStackView.trailingAnchor, constant: 0).isActive = true
         stack789StackView.bottomAnchor.constraint(equalTo: gameBoardStackView.bottomAnchor, constant: 0).isActive = true
 
         //MARK: - PlayerLegendStackView
-        playerLegendStackView.distribution = .fillEqually
+        playerLegendStackView.distribution = .fillProportionally
+        playerLegendStackView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        playerLegendStackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
         
         player1Label.textColor = .green
         player2Label.textColor = .green
@@ -137,16 +150,20 @@ class GameBoardViewController: UIViewController {
         recoilImage.heightAnchor.constraint(equalToConstant: 60).isActive = true
         recoilImage.widthAnchor.constraint(equalToConstant: 60).isActive = true
         
-        treeImage.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        treeImage.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        treeImage.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        treeImage.widthAnchor.constraint(equalToConstant: 75).isActive = true
         
         
         
         //MARK: - GameInfoLabel
+        gameInfo.translatesAutoresizingMaskIntoConstraints = false
         gameInfo.textColor = .green
         gameInfo.topAnchor.constraint(equalTo: gameBoardStackView.bottomAnchor, constant: -150).isActive = true
+        
         //MARK: - ClearButton
+        //clearButton.translatesAutoresizingMaskIntoConstraints = false
         clearButton.setTitleColor(.green, for: .normal)
+        
     }
     
 }
