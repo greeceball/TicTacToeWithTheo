@@ -35,6 +35,12 @@ class GameController {
     
     var currentBoardState: [Int : SquareState]
     
+    var turnsTaken: Int {
+        get {
+            player1.moves.count + player2.moves.count
+        }
+    }
+    
     var player1Turn: Bool = true
     
     private let winningCombos: [Set<Int>] = [
@@ -57,7 +63,7 @@ class GameController {
     
     // Public Methods
     
-    func playerMoved(player: Player, move: Int) -> Bool {
+    func playerMoved(player: Player, move: Int) -> GameState {
         // update Game Board
         currentBoardState[move] = player.token
         
@@ -66,18 +72,25 @@ class GameController {
         
         // did this player win?
         if didWin(player) {
-            return true
-        } else {
+            return player == player1 ? .Player1Won : .Player2Won
+        } else if turnsTaken < 9 {
             // change players
             togglePlayer()
-            
-            return false
+            return player1Turn ? .Player1Turn : .Player2Turn
+        } else {
+            // tie
+            return .tie
         }
     }
     
     func resetBoard() {
+        // reset board
         self.currentBoardState = cleanBoard
-        player1Turn = true
+        
+        // reset players
+        self.player1 = Player(name: "Player 1", token: .X)
+        self.player2 = Player(name: "Player 2", token: .O)
+        self.player1Turn = true
     }
     
     
@@ -105,3 +118,10 @@ class GameController {
 } // end class
 
 
+enum GameState {
+    case Player1Turn
+    case Player2Turn
+    case Player1Won
+    case Player2Won
+    case tie
+}

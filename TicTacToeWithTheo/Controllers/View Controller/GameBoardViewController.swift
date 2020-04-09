@@ -57,7 +57,9 @@ class GameBoardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
-        gameInfo.text = "Player One Starts"
+//        setUpUI()
+        updateCurrentPlayer()
+        updateBoard()
     }
     
     
@@ -77,27 +79,85 @@ class GameBoardViewController: UIViewController {
         print("Button \(sender.tag) was pressed")
         currentPlayer == GameController.shared.player1 ? sender.setImage(#imageLiteral(resourceName: "Recoil"), for: .normal) : sender.setImage(#imageLiteral(resourceName: "Tree"), for: .normal)
         
+        updateBoard()
+        
         let value: Int = sender.tag
-        if GameController.shared.playerMoved(player: currentPlayer, move: value) {
-            // current player has won the game
-            gameInfo.text = "\(currentPlayer.name) won!"
-            
-            // game over!
-            gameActive = false
-        } else {
+        let gameState = GameController.shared.playerMoved(player: currentPlayer, move: value)
+        
+        
+        switch gameState {
+        case .Player1Turn, .Player2Turn:
             updateCurrentPlayer()
+        case .Player1Won, .Player2Won:
+            gameActive = false
+            gameInfo.text = "\(currentPlayer.name) won!"
+        case .tie:
+            gameActive = false
+            gameInfo.text = "Tie. Press Clear to play again!"
         }
     }
     
     
     @IBAction func clearButtonTapped(_ sender: Any) {
-        
+        GameController.shared.resetBoard()
+        updateBoard()
+        updateCurrentPlayer()
+        gameActive = true
     }
     
     //MARK: - HelperFunc's
     func updateCurrentPlayer() {
         currentPlayer =  GameController.shared.player1Turn ? GameController.shared.player1 : GameController.shared.player2
         gameInfo.text = "\(currentPlayer.name)'s turn"
+    }
+    
+    func setUpUI() {
+        
+        //MARK: - gameInfo
+        player1Label.textColor = .green
+        player2Label.textColor = .green
+        
+        recoilImage.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        recoilImage.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        treeImage.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        treeImage.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        
+        //MARK: - GameInfoLabel
+        //        gameInfo.translatesAutoresizingMaskIntoConstraints = false
+        //        gameInfo.textColor = .green
+        //        gameInfo.font = UIFont(name: "Herculanum.ttf", size: 26)
+        
+        
+        //MARK: - ClearButton
+        //clearButton.translatesAutoresizingMaskIntoConstraints = false
+        clearButton.setTitleColor(.green, for: .normal)
+        
+    }
+    
+    func updateBoard() {
+        let squares = GameController.shared.currentBoardState
+        
+        buttonOne.setTitle(playerToken(squares[1]!), for: .normal)
+        buttonTwo.setTitle(playerToken(squares[2]!), for: .normal)
+        buttonThree.setTitle(playerToken(squares[3]!), for: .normal)
+        buttonFour.setTitle(playerToken(squares[4]!), for: .normal)
+        buttonFive.setTitle(playerToken(squares[5]!), for: .normal)
+        buttonSix.setTitle(playerToken(squares[6]!), for: .normal)
+        buttonSeven.setTitle(playerToken(squares[7]!), for: .normal)
+        buttonEight.setTitle(playerToken(squares[8]!), for: .normal)
+        buttonNine.setTitle(playerToken(squares[9]!), for: .normal)
+    }
+    
+    func playerToken(_ square: SquareState) -> String {
+        switch square {
+        case .empty:
+            return "-"
+        case .O:
+            return "O"
+        case .X:
+            return "X"
+        }
     }
     
 }
